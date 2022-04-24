@@ -2,7 +2,7 @@
 let userData = [];
 
 $.ajax({
-  url: 'https://randomuser.me/api/?results=12',
+  url: 'https://randomuser.me/api/?results=12&nat=US',
   dataType: 'json',
   success: function(users) {
     console.log(users);
@@ -15,8 +15,22 @@ $.ajax({
 
 const createUserPreview = function() {
   userData.results.forEach(user => {
-    $('.users-container').append(`<div class="user-thumbnail"><img src="${user.picture.large}"> <h2>${user.name.first}</h2> <h2>${user.name.last}</h2> <p>${user.email}</p> <p>${user.location.city}</p></div>`);
+    $('.users-container').append(
+      `
+        <div class="user-thumbnail">
+          <a data-lightbox="example-set" href="${user.picture.large}" title="<h2>${user.name.first} ${user.name.last}</h2><p>${user.email}</p><p>${user.location.city}</p><p>${user.cell}</p><p>${user.location.street.number} ${user.location.street.name} ${user.location.postcode}</p>">
+            <img src="${user.picture.large}">
+          </a>
+          <h2>${user.name.first} ${user.name.last}</h2>
+          <p>${user.email}</p>
+          <p>${user.location.city}</p>
+        </div>
+      `);
   });
 };
 
-
+//light box
+lightbox.option({
+  'resizeDuration': 200,
+  'wrapAround': true
+});

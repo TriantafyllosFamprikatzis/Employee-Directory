@@ -64,6 +64,8 @@ footer {
 }
 
 .user-thumbnail img {
+  width: 128px;
+  height: 136px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -73,8 +75,8 @@ footer {
 
 .user-thumbnail__info {
   margin-left: 20px;
+  word-break: break-word;
 }
-
 
 .lb-container {
   position: relative;
@@ -157,4 +159,43 @@ footer {
 .lb-nav a.lb-prev {
   background-size: 35px;
   width: 35% !important;
+}
+
+@media only screen and (max-width: 1600px) {
+  .user-thumbnail {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 1097px) {
+  .user-thumbnail {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .user-thumbnail {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .user-thumbnail {
+    width: 100%;
+  }
+
+  .user-thumbnail a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-thumbnail a img {
+    margin: 0 auto;
+  }
+
+  .lb-outerContainer,
+  .lb-dataContainer {
+    width: 100% !important;
+  }
 }

@@ -75,7 +75,7 @@ footer {
 
 .user-thumbnail__info {
   margin-left: 20px;
-  word-break: break-word;
+  word-break: break-all;
 }
 
 .lb-container {

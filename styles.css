@@ -45,11 +45,6 @@ footer {
   -o-border-radius: 10px;
   width: 30%;
   margin: 25px;
-  display: none;
-}
-
-.user-thumbnail.active {
-  display: block;
 }
 
 .user-thumbnail a {

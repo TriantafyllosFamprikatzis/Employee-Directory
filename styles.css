@@ -159,6 +159,7 @@ footer {
 .lb-nav a.lb-prev {
   background-size: 35px;
   width: 35% !important;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1600px) {

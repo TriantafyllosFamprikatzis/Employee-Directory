@@ -22,12 +22,12 @@ const createUserPreview = function() {
         <div class="user-thumbnail">
           <a data-lightbox="example-set" href="${user.picture.large}" title="<h2>${user.name.first} ${user.name.last}</h2><p>${user.email}</p><p>${user.location.city}</p><p>${user.cell}</p><p>${user.location.street.number} ${user.location.street.name} ${user.location.postcode}</p>">
             <img src="${user.picture.large}">
+            <div class="user-thumbnail__info">
+              <h2 class="user-name">${user.name.first} ${user.name.last}</h2>
+              <p>${user.email}</p>
+              <p>${user.location.city}</p>
+            </div>
           </a>
-          <div class="user-thumbnail__info">
-            <h2 class="user-name">${user.name.first} ${user.name.last}</h2>
-            <p>${user.email}</p>
-            <p>${user.location.city}</p>
-          </div>
         </div>
       `);
   });

@@ -74,3 +74,48 @@ footer {
 .user-thumbnail__info {
   margin-left: 20px;
 }
+
+
+.lb-container {
+  position: relative;
+}
+
+.lb-outerContainer {
+  width: 400px !important;
+  border-radius: unset !important;
+  -webkit-border-radius: unset !important;
+  -moz-border-radius: unset !important;
+  -ms-border-radius: unset !important;
+  -o-border-radius: unset !important;
+  padding: 30px 0 0;
+}
+
+.lb-dataContainer {
+  width: 400px !important;
+  border-bottom-right-radius: unset !important;
+  border-bottom-left-radius: unset !important
+}
+
+.lb-image {
+  margin: 0 auto;
+  border-radius: 50% !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  -ms-border-radius: 50% !important;
+  -o-border-radius: 50% !important;
+}
+
+.lb-data .lb-details {
+  color: black;
+  text-align: center;
+  width: 100% !important;
+}
+
+.lb-dataContainer {
+  background-color: white;
+  padding: 45px ​0 10px;
+}
+
+.lb-data .lb-close {
+  margin: 0 10px 10px 0;
+}

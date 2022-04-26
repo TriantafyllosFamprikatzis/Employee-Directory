@@ -43,8 +43,13 @@ footer {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  width: 25%;
+  width: 30%;
   margin: 25px;
+  display: none;
+}
+
+.user-thumbnail.active {
+  display: block;
 }
 
 .user-thumbnail a {

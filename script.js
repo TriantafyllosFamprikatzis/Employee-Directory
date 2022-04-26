@@ -1,6 +1,7 @@
 
 let userData = [];
 
+//Get users
 $.ajax({
   url: 'https://randomuser.me/api/?results=12&nat=US',
   dataType: 'json',
@@ -13,6 +14,7 @@ $.ajax({
   }
 });
 
+//Create user
 const createUserPreview = function() {
   userData.results.forEach(user => {
     $('.users-container').append(
@@ -22,7 +24,7 @@ const createUserPreview = function() {
             <img src="${user.picture.large}">
           </a>
           <div class="user-thumbnail__info">
-            <h2>${user.name.first} ${user.name.last}</h2>
+            <h2 class="user-name">${user.name.first} ${user.name.last}</h2>
             <p>${user.email}</p>
             <p>${user.location.city}</p>
           </div>
@@ -35,4 +37,18 @@ const createUserPreview = function() {
 lightbox.option({
   'resizeDuration': 200,
   'wrapAround': true
-});
+});  
+
+//Search User
+function userSearch() {
+  let users = document.querySelectorAll('.user-name');
+  let searchQuery = document.getElementById('userInput').value; 
+
+  for (let i = 0; i < users.length; i++) {
+    if(users[i].innerText.toLowerCase().includes(searchQuery.toLowerCase())) {
+      users[i].closest('.user-thumbnail').style.display = '';
+    } else {
+      users[i].closest('.user-thumbnail').style.display = 'none';
+    }
+  }
+}

@@ -45,7 +45,7 @@ const createUserPreview = function() {
 lightbox.option({
   'resizeDuration': 200,
   'wrapAround': true,
-  'positionFromTop': 200
+  'positionFromTop': 50
 });  
 
 //Search User

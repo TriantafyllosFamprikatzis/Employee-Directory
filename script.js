@@ -1,5 +1,6 @@
 
 let userData = [];
+let errorMessage = document.getElementById('errorMessage');
 
 //Get users
 $.ajax({
@@ -11,8 +12,14 @@ $.ajax({
   },
   complete: function() {
     createUserPreview();
+    errorMessage.style.display = 'none';
+  },
+  error: function(error){
+    console.log(error);
+    errorMessage.style.display = 'block';
   }
 });
+
 
 //Create user
 const createUserPreview = function() {
@@ -20,7 +27,7 @@ const createUserPreview = function() {
     let userBirthdate = new Date(user.dob.date).toDateString();
     $('.users-container').append(
       `
-        <div class="user-thumbnail">
+        <div class="user-thumbnail active">
           <a data-lightbox="example-set" href="${user.picture.large}" title="<h2>${user.name.first} ${user.name.last}</h2><p>${user.email}</p><p>${user.location.city}</p><div></div><p>${user.cell}</p><p>${user.location.street.number} ${user.location.street.name}, ${user.location.state}, ${user.location.postcode}</p><p>Birthdate: ${userBirthdate}</p>">
             <img src="${user.picture.large}">
             <div class="user-thumbnail__info">
